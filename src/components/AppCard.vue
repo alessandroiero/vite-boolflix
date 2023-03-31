@@ -8,6 +8,23 @@ export default {
     },
         components: {
             CountryFlag
+        },
+        computed:{
+            getLanguage(){
+                switch(this.info.original_language){
+                // lingua inglese
+                case 'en':
+                    return 'gb';
+                    break;
+                
+                default:
+                    return info.original_language
+            }
+        },
+        voto(){
+            // Approssimiamo il voto una volta diviso per due
+            return Math.ceil(this.info.vote_average /2);
+        }
         }
 }
 </script>
@@ -20,12 +37,12 @@ export default {
         <!-- titolo originale -->
         <h3>{{ info.original_title }}</h3>
         <!-- info lingua -->
-        <div>{{ info.original_language }}</div>
+        <div>{{ getLanguage }}</div>
         <!-- recensioni -->
-        <div>{{ info.vote_average }}</div>
+        <font-awesome-icon icon="fa-solid fa-star" v-for="n in voto"/>
+        <font-awesome-icon icon="fa-regular fa-star" v-for="n in 5-voto"/>
     </div>
-    <!-- <country-flag :contry='it' size='small'/>
-    <font-awesome-icon icon="fa-solid fa-user-secret" /> -->
+     <country-flag :contry='getLanguage' size='small'/>
 </template>
 
 <style lang="scss" scoped></style>
