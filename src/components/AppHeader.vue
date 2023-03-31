@@ -1,13 +1,25 @@
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+data() {
+    return {
+        store
+    }
+},
+methods: {
+    search(){
+        console.log('fai la ricerca')
+    }
+}
 }
 </script>
 
 <template>
-    <header class="my-5">
-        <h1 class="text-center">Rick and Morty</h1>
-       
+    <header>
+        <input type="text" placeholder="Cerca Film">
+        <!-- inseriamo la funzione search nel metodo click -->
+        <button @click="search">Search</button>
+
     </header>
 </template>
 

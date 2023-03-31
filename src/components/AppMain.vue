@@ -1,16 +1,19 @@
 <script>
-import CharacterSearch from './CharacterSearch.vue';
+import CountryFlag from 'vue-country-flag-next'
+import AppSearch from './AppSearch.vue';
+import AppCard from './AppCard.vue';
     export default {
         name: 'Main',
         components: {
-            CharacterSearch,
+            AppSearch,
+            AppCard
         }
     }
 </script>
 
 <template>
     <main>
-        <CharacterSearch />
+        <AppSearch />
     </main>
 </template>
 
