@@ -9,7 +9,7 @@ export default {
         }
     },
     methods: {
-        // Creiamo una funzione per l'API
+        // Creiamo una funzione per l'API MOVIES
         getMovies() {
             axios.get(this.store.config.urlMovie, {
                 params: {
@@ -22,6 +22,7 @@ export default {
                 this.store.movies = response.data.results;
             })
         },
+        // API Serie TV
         getSeries() {
             axios.get(this.store.config.urlSeries, {
                 params: {
@@ -46,16 +47,19 @@ export default {
 
 <template>
     <header>
+        <!-- jumbotron -->
         <div class="jumbotron">
+            <!-- logo -->
             <div class="jumbotron-logo d-flex">
                 <img class="logo" src="../assets/img/Netflix-logo.png" alt="" />
             </div>
+            <!-- /logo -->
 
+            <!-- info -->
             <div class="info">
-                <h1>
-                    Film, serie TV e tanto altro. Senza limiti.</h1>
-                <p>Guarda ciò che vuoi ovunque. Disdici quando vuoi.
-                </p>
+                <h1>Film, serie TV e tanto altro. Senza limiti.</h1>
+                <p>Guarda ciò che vuoi ovunque. Disdici quando vuoi.</p>
+                <!-- form -->
                 <div class="form">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" v-model="store.searchKey" placeholder="Cerca Film o Serie TV"
@@ -64,8 +68,11 @@ export default {
                             id="button-addon2">Cerca</button>
                     </div>
                 </div>
+                <!-- /form -->
             </div>
+            <!-- /info -->
         </div>
+        <!-- /jumbotron -->
     </header>
 </template>
 
