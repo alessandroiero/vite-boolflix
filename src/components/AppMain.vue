@@ -21,10 +21,10 @@ export default {
     <main class="d-flex justify-content-center">
         <ul class="cards">
             <li v-for="movie in store.movies">
-                <AppCard :info="movie" />,
+                <AppCard :info="movie" />
             </li>
             <li v-for="serie in store.series">
-                <AppCard :info="serie" />,
+                <AppCard :info="serie" />
             </li>
         </ul>
     </main>

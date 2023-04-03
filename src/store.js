@@ -10,5 +10,5 @@ export const store = reactive({
         defaultLang:'it-IT',
     },
     movies:[],
-    searchKey:''
+    searchKey:' '
 });

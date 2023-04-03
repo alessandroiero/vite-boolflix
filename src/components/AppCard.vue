@@ -14,11 +14,17 @@ export default {
             switch (this.info.original_language) {
                 // lingua inglese
                 case 'en':
-                    return 'gb';
+                    return 'Lingua: inglese';
+                    break;
+                    case 'it':
+                    return 'Lingua: italiana';
+                    break;
+                    case 'fr':
+                    return 'Lingua: francese';
                     break;
 
                 default:
-                    return info.original_language
+                    return info.original_language;
             }
         },
         voto() {
@@ -45,7 +51,7 @@ export default {
                     <li>{{ info.title || info.name }}</li>
                     <li>{{ info.original_title }}</li>
                     <li>{{ getLanguage }}</li>
-                    <li class="overview">Overview: {{ info.overview }}</li>
+                    <li class="overview"> {{ info.overview }}</li>
                 </div>
             </ul>
             <!-- recensioni -->
