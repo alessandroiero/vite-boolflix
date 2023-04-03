@@ -22,6 +22,9 @@ export default {
                     case 'fr':
                     return 'Lingua: francese';
                     break;
+                    case 'es':
+                    return 'Lingua: spagnolo';
+                    break;
 
                 default:
                     return info.original_language;
@@ -42,11 +45,15 @@ export default {
         <div class="container-content">
             <ul class="card d-flex justify-content-center">
                 <div class="images">
+                    <!-- mi richiamo le immagini delle varie card tramite il poster path dell'api-->
+
+                    <!-- se è visibile mostrare la locandina -->
                     <img v-if="info.poster_path !== null" :src="`https://image.tmdb.org/t/p/w342${info.poster_path}`"
                         :alt="info.title">
-                    <img v-else :src="`https://via.placeholder.com/342x485/000?text=${info.title || info.name}`"
-                        :alt="info.title">
+                    <!-- altrimenti mostrami un placeholder con il nome della serie tv o film -->
+                    <img v-else :src="`https://via.placeholder.com/342x485/000?text=${info.title || info.name}`">
                 </div>
+                <!-- parte inferiore card con sintassi baffo -->
                 <div class="card-bottom">
                     <li>{{ info.title || info.name }}</li>
                     <li>{{ info.original_title }}</li>
